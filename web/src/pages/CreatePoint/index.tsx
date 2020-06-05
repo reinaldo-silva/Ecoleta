@@ -1,5 +1,5 @@
 import React, {useEffect, useState, ChangeEvent, FormEvent} from "react"
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'
 import { Map, TileLayer, Marker} from 'react-leaflet'
 import { LeafletMouseEvent } from 'leaflet'
@@ -44,6 +44,7 @@ const CreatePoint = () => {
     const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0, 0]);
     const [initialPosition, setInitialPosition] = useState<[number, number]>([0, 0]);
 
+    const history = useHistory();
 
     //tentar arrumar erro de localização atual
     useEffect(() => {
@@ -146,6 +147,8 @@ const CreatePoint = () => {
         await api.post('points', data);
 
         alert('ponto de coleta criado!')
+
+        history.push('/');
     }
 
     return (
