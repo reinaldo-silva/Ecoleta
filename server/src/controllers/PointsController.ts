@@ -52,7 +52,7 @@ class PointsController {
         const trx = await knex.transaction();
 
         const point = {      
-                image: 'https://www.casamagalhaes.com.br/blog/wp-content/uploads/2017/04/desafios-de-empreender-no-ramo-de-supermercado.jpg-fake',
+                image: 'https://media-cdn.tripadvisor.com/media/photo-s/12/1d/69/5b/img-20180212-wa0200-largejpg.jpg',
                 name,
                 email,
                 whatsapp,
